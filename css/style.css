@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;800&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+:root {
+  /* Blue scale */
+  --blue-950: #0c122c; /* rgb(12, 18, 44) */
+  --blue-900: #0f1b3d; /* rgb(15, 27, 61) */
+  --blue-850: #1e2d69; /* rgb(30, 45, 105) */
+  --blue-600: #697ed4; /* rgb(105, 126, 212) */
+  --blue-200: #dbd9ff; /* rgb(219, 217, 255) */
+
+  /* Pink scale (from Gradient 2) */
+  --pink-400: #ffa197; /* rgb(255, 161, 151) */
+  --pink-500: #ff4a95; /* rgb(255, 74, 149) */
+
+  --gradient-blue: linear-gradient(135deg, #1e2d69 0%, #0c122c 100%);
+
+  --gradient-pink: linear-gradient(135deg, #ffa197 0%, #ff4a95 100%);
+
+  /* TEXT PRESET 1 */
+  --text-preset-1: 700 40px/1 "Raleway", sans-serif;
+
+  /* TEXT PRESET 2 */
+  --text-preset-2-bold: 700 14px/1.15 "Raleway", sans-serif;
+  --text-preset-2-regular: 400 14px/1.15 "Raleway", sans-serif;
+
+  /* TEXT PRESET 3 */
+  --text-preset-3-extrabold: 800 12px/1.15 "Raleway", sans-serif;
+  --text-preset-3-bold: 700 12px/1.15 "Raleway", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+  background: var(--blue-950);
+  color: white;
+}
+
+/* Mobile First */
+.background-img {
+  background-image: url("../images/bg-mobile.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+}
+.background-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  position: relative;
+  /* z-index: 1; */
+  padding: 20px;
+  background-color: var(--blue-850);
+  width: min(350px, 90%);
+  height: 201px;
+  border-radius: 16px 100px 16px 16px;
+}
+.main {
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  gap: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: min(100%, 380px);
+}
+.storage-card {
+  position: relative;
+  width: min(90%, 540px);
+  height: 154px;
+  padding: 40px 32px;
+  border-radius: 14px;
+  background: var(--blue-850);
+  color: var(--blue-200);
+  font-family: "Raleway", sans-serif;
+}
+
+/* TEXT */
+.storage-text {
+  text-align: center;
+  font: var(--text-preset-2-regular);
+  margin-bottom: 1rem;
+}
+
+.storage-text strong {
+  color: #ffffff;
+}
+
+/* PROGRESS */
+.progress {
+  background: #0f1b3d;
+  border-radius: 999px;
+  height: 20px;
+  padding: 3px;
+}
+
+.progress-bar {
+  position: relative;
+  height: 100%;
+  width: 80%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #ffa197, #ff4a95);
+}
+
+.progress-dot {
+  position: absolute;
+  right: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+}
+
+/* LABELS */
+.progress-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* FLOATING BUBBLE */
+.storage-left {
+  position: absolute;
+  top: -40px;
+  right: 2rem;
+  background: #ffffff;
+  color: #0c122c;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.storage-left strong {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.storage-left span {
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  opacity: 0.6;
+}
+
+/* SPEECH BUBBLE ARROW (desktop) */
+
+@media (min-width: 600px) {
+  .background-img {
+    background-image: url("../images/bg-desktop.png");
+    height: 50%;
+    width: 100%;
+
+    bottom: 0;
+  }
+  .container {
+    align-items: flex-start;
+    /* flex-direction: row; */
+    width: 540px;
+  }
+  .storage-left::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -12px;
+    border-width: 12px 12px 0 0;
+    border-style: solid;
+    border-color: #ffffff transparent transparent transparent;
+  }
+}
+
+@media (min-width: 920px) {
+  .container {
+    flex-direction: row;
+    align-items: flex-end;
+    width: 900px;
+  }
+}
