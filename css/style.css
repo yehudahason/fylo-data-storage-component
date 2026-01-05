@@ -29,6 +29,7 @@
   /* TEXT PRESET 3 */
   --text-preset-3-extrabold: 800 12px/1.15 "Raleway", sans-serif;
   --text-preset-3-bold: 700 12px/1.15 "Raleway", sans-serif;
+  font-size: 16px;
 }
 
 body {
@@ -57,7 +58,7 @@ body {
 .content {
   position: relative;
   /* z-index: 1; */
-  padding: 20px;
+  padding: 40px 80px 40px 40px;
   background-color: var(--blue-850);
   width: min(350px, 90%);
   height: 201px;
@@ -82,6 +83,31 @@ body {
   gap: 20px;
   width: min(100%, 380px);
 }
+
+h1 img {
+  width: 135px;
+  height: auto;
+}
+.icons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  margin-top: 1rem;
+  width: 176px;
+  height: 48px;
+}
+
+.icons .item {
+  width: 48px;
+  height: 48px;
+  background: var(--blue-900);
+  padding: 12px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .storage-card {
   position: relative;
   width: min(90%, 540px);
@@ -101,7 +127,7 @@ body {
 }
 
 .storage-text strong {
-  color: #ffffff;
+  color: var(--blue-200);
 }
 
 /* PROGRESS */
@@ -117,7 +143,7 @@ body {
   height: 100%;
   width: 80%;
   border-radius: inherit;
-  background: linear-gradient(90deg, #ffa197, #ff4a95);
+  background: var(--gradient-pink);
 }
 
 .progress-dot {
@@ -136,15 +162,15 @@ body {
   display: flex;
   justify-content: space-between;
   margin-top: 0.5rem;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
 }
 
 /* FLOATING BUBBLE */
 .storage-left {
   position: absolute;
-  top: -40px;
-  right: 2rem;
+  bottom: -55px;
+  right: 4rem;
   background: #ffffff;
   color: #0c122c;
   padding: 0.75rem 1.25rem;
@@ -152,6 +178,8 @@ body {
   display: flex;
   align-items: baseline;
   gap: 0.4rem;
+  width: 180px;
+  height: 72px;
 }
 
 .storage-left strong {
@@ -181,14 +209,11 @@ body {
     /* flex-direction: row; */
     width: 540px;
   }
-  .storage-left::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    bottom: -12px;
-    border-width: 12px 12px 0 0;
-    border-style: solid;
-    border-color: #ffffff transparent transparent transparent;
+  .storage-text {
+    text-align: left;
+  }
+  .storage-left {
+    right: 7.5rem;
   }
 }
 
@@ -197,5 +222,22 @@ body {
     flex-direction: row;
     align-items: flex-end;
     width: 900px;
+  }
+  .storage-left {
+    top: -38px;
+    right: 36px;
+    bottom: auto;
+    border-radius: 10px 10px 0 10px;
+  }
+  .storage-left::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -21px;
+    width: 0;
+    height: 0;
+    border-left: 22px solid transparent;
+    border-top: 22px solid #fff;
+    border-color: #ffffff transparent transparent transparent;
   }
 }
