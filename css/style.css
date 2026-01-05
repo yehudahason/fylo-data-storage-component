@@ -170,7 +170,7 @@ h1 img {
 .storage-left {
   position: absolute;
   bottom: -55px;
-  right: 4rem;
+  right: 3.5rem;
   background: #ffffff;
   color: #0c122c;
   padding: 0.75rem 1.25rem;
@@ -194,8 +194,7 @@ h1 img {
   opacity: 0.6;
 }
 
-/* SPEECH BUBBLE ARROW (desktop) */
-
+/* TABLET   */
 @media (min-width: 600px) {
   .background-img {
     background-image: url("../images/bg-desktop.png");
@@ -213,10 +212,11 @@ h1 img {
     text-align: left;
   }
   .storage-left {
-    right: 7.5rem;
+    right: 9.5rem;
   }
 }
 
+/* Widescreen */
 @media (min-width: 920px) {
   .container {
     flex-direction: row;
